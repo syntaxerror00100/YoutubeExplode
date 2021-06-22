@@ -1,3 +1,7 @@
+
+# - Added video search result number of views
+
+
 # YoutubeExplode
 
 [![Build](https://github.com/Tyrrrz/YoutubeExplode/workflows/CI/badge.svg?branch=master)](https://github.com/Tyrrrz/YoutubeExplode/actions)
