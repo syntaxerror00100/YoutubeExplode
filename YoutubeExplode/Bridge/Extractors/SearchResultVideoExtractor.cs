@@ -37,6 +37,18 @@ namespace YoutubeExplode.Bridge.Extractors
                 .ConcatToString()
         );
 
+        public string? TryGetViewCount() => _memo.Wrap(() =>
+            {
+                return _content
+                    .GetPropertyOrNull("viewCountText")?
+                    .GetPropertyOrNull("simpleText")?
+                    .GetStringOrNull()?
+                    .Replace("views","")
+                    .Replace("view","").Trim() ?? "";
+            }
+
+        );
+
         private JsonElement? TryGetVideoAuthorDetails() => _memo.Wrap(() =>
             _content
                 .GetPropertyOrNull("longBylineText")?

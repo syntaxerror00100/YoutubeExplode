@@ -64,6 +64,9 @@ namespace YoutubeExplode.Search
                         videoExtractor.TryGetVideoChannelId() ??
                         throw new YoutubeExplodeException("Could not extract video channel ID.");
 
+
+                    var viewCountText = videoExtractor.TryGetViewCount() ?? "";
+
                     var duration = videoExtractor.TryGetVideoDuration();
 
                     var thumbnails = new List<Thumbnail>();
@@ -96,7 +99,8 @@ namespace YoutubeExplode.Search
                         title,
                         new Author(channelId, channelTitle),
                         duration,
-                        thumbnails
+                        thumbnails,
+                        viewCountText
                     );
 
                     results.Add(video);

@@ -29,6 +29,8 @@ namespace YoutubeExplode.Search
         /// <inheritdoc />
         public IReadOnlyList<Thumbnail> Thumbnails { get; }
 
+        public string ViewCount { get; }
+
         /// <summary>
         /// Initializes an instance of <see cref="VideoSearchResult"/>.
         /// </summary>
@@ -37,13 +39,15 @@ namespace YoutubeExplode.Search
             string title,
             Author author,
             TimeSpan? duration,
-            IReadOnlyList<Thumbnail> thumbnails)
+            IReadOnlyList<Thumbnail> thumbnails,
+            string viewCount)
         {
             Id = id;
             Title = title;
             Author = author;
             Duration = duration;
             Thumbnails = thumbnails;
+            ViewCount =viewCount;
         }
 
         /// <inheritdoc />
